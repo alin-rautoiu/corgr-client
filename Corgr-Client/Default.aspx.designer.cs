@@ -40,21 +40,21 @@ namespace Corgr_Client {
         protected global::System.Web.UI.WebControls.Repeater RepeaterLikes;
         
         /// <summary>
-        /// Like control.
+        /// LikeButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Like;
+        protected global::System.Web.UI.WebControls.Button LikeButton;
         
         /// <summary>
-        /// Dislike control.
+        /// DislikeButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Dislike;
+        protected global::System.Web.UI.WebControls.Button DislikeButton;
     }
 }

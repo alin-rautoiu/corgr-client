@@ -12,11 +12,13 @@ namespace Corgr_Client.Services
     {
         public DogModel GetRandomDog()
         {
-            WebClient client = new WebClient();
-            string json = client.DownloadString("https://corgr.herokuapp.com/getRandomCorgi");
-            dynamic randomDog = JsonConvert.DeserializeObject<DogModel>(json);            
-            
-            return randomDog;
+            using (var client = new WebClient())
+            {
+                string json = client.DownloadString("https://corgr.herokuapp.com/getRandomCorgi");
+                dynamic randomDog = JsonConvert.DeserializeObject<DogModel>(json);
+
+                return randomDog;
+            }
         }
     }
 }

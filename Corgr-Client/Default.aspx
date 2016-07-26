@@ -40,9 +40,9 @@
     <br />
     <br />
      
-    
-        <asp:Button ID="Like" runat="server" Text="Like" BackColor="Green" />  
-        <asp:Button ID="Dislike" runat="server" Text="Dislike" BackColor="Red" />
+        
+        <asp:Button ID="LikeButton" runat="server" Text="Like" BackColor="Green" />  
+        <asp:Button ID="DislikeButton" runat="server" Text="Dislike" BackColor="Red" />
      </div>
 
 </asp:Content>

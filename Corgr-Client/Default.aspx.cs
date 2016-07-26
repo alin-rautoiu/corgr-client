@@ -6,25 +6,18 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using Autofac.Integration.Web;
-using Autofac;
 
 namespace Corgr_Client
 {
     public partial class _Default : Page
     {
-        public IDogsInTheSkyService DogsIntheSkyService { get; set; }
-
-        protected override void OnPreInit(EventArgs e)
-        {
-            var cpa = (IContainerProviderAccessor)HttpContext.Current.ApplicationInstance;
-            var cp = cpa.ContainerProvider;
-            cp.RequestLifetime.InjectProperties(this); 
-        }
+        public IDogsInTheSkyService dogsIntheSkyService { get; set; }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var Dog1 = DogsIntheSkyService.GetRandomDog();
+            dogsIntheSkyService = new DogsInTheSkyService();
+
+            var Dog1 = dogsIntheSkyService.GetRandomDog();
           
             DogImage.ImageUrl = Dog1.Face;
             DogName.Text = Dog1.Name;
