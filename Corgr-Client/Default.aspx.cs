@@ -15,13 +15,13 @@ namespace Corgr_Client
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            var Dog1 = dogsIntheSkyService.GetRandomDog();
-            Dog1.Face = "labrador_image";
-            Dog1.Name = "Aria";
-            var Likes = new List<string>() { "Food" };
-            Dog1.Likes = Likes;
+            dogsIntheSkyService = new DogsInTheSkyService();
 
-            RepeaterLikes.DataSource = Likes;
+            var Dog1 = dogsIntheSkyService.GetRandomDog();
+          
+            DogImage.ImageUrl = Dog1.Face;
+            DogName.Text = Dog1.Name;
+            RepeaterLikes.DataSource = Dog1.Likes;
             RepeaterLikes.DataBind();
         }
     }

@@ -13,21 +13,29 @@
             width: 300px;
             height: 220px
         }
+       .center {
+            margin: auto;
+            width: 60%;
+            padding: 10px;
+        }
     </style>
-    <asp:Image runat="server" ID="DogImage" CssClass="displayed" ImageUrl="http://www.petpact.com/wp-content/uploads/2014/12/happy-labrador.jpg" />
+    <asp:Image runat="server" ID="DogImage" CssClass="displayed" />
     <br />
-    <div style="margin-left: auto; margin-right: auto; text-align: center;">
+    <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
         <asp:Label runat="server" ID="DogName" Text="Aria Labradino"></asp:Label>
    
     <br />
-    
+    <div class="center" style="margin-left: auto; margin-right: auto; display: block; text-align: center;">    
     <ul>       
     <asp:Repeater runat="server" ID="RepeaterLikes">
-        <ItemTemplate>     
+        <ItemTemplate> 
+            <div class="center" style="margin-right: auto;  display: block; text-align: center;">    
             <li><%# Container.DataItem.ToString() %></li>
+            </div>
         </ItemTemplate>
     </asp:Repeater>
     </ul>
+    </div>
    
     <br />
     <br />
