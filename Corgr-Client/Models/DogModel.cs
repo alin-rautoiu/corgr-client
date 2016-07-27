@@ -11,8 +11,9 @@ namespace Corgr_Client.Models
     [Serializable]
     [Table("Dog", Schema = "Dg")]
     public class DogModel
-    {   [Key]
-        [JsonProperty("id")]
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         [JsonProperty("pathToFace")]
         [MaxLength(150)]
@@ -23,5 +24,9 @@ namespace Corgr_Client.Models
         [JsonProperty("likes")]
         public IEnumerable<string> Likes { get; set; }
         public bool ? Liked { get; set; }
+        [JsonProperty("id")]
+        [Index(IsUnique = true)]
+        public int Index { get; set; }
+
     }
 }

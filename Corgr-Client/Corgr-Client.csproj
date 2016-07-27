@@ -274,6 +274,30 @@
     <Compile Include="Migrations\201607261356592_tabelacaine.Designer.cs">
       <DependentUpon>201607261356592_tabelacaine.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607271214406_20160727315pm.cs" />
+    <Compile Include="Migrations\201607271214406_20160727315pm.Designer.cs">
+      <DependentUpon>201607271214406_20160727315pm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607271226474_20160727326pm.cs" />
+    <Compile Include="Migrations\201607271226474_20160727326pm.Designer.cs">
+      <DependentUpon>201607271226474_20160727326pm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607271236532_20160727334pm.cs" />
+    <Compile Include="Migrations\201607271236532_20160727334pm.Designer.cs">
+      <DependentUpon>201607271236532_20160727334pm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607271242421_20160727342pm.cs" />
+    <Compile Include="Migrations\201607271242421_20160727342pm.Designer.cs">
+      <DependentUpon>201607271242421_20160727342pm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607271244275_20160727344pm.cs" />
+    <Compile Include="Migrations\201607271244275_20160727344pm.Designer.cs">
+      <DependentUpon>201607271244275_20160727344pm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201607271250355_20160727350pm.cs" />
+    <Compile Include="Migrations\201607271250355_20160727350pm.Designer.cs">
+      <DependentUpon>201607271250355_20160727350pm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DogModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -305,6 +329,24 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607261356592_tabelacaine.resx">
       <DependentUpon>201607261356592_tabelacaine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271214406_20160727315pm.resx">
+      <DependentUpon>201607271214406_20160727315pm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271226474_20160727326pm.resx">
+      <DependentUpon>201607271226474_20160727326pm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271236532_20160727334pm.resx">
+      <DependentUpon>201607271236532_20160727334pm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271242421_20160727342pm.resx">
+      <DependentUpon>201607271242421_20160727342pm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271244275_20160727344pm.resx">
+      <DependentUpon>201607271244275_20160727344pm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607271250355_20160727350pm.resx">
+      <DependentUpon>201607271250355_20160727350pm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

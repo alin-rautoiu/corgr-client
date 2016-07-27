@@ -16,7 +16,6 @@ namespace Corgr_Client.Services
             {
                 string json = client.DownloadString("https://corgr.herokuapp.com/getRandomCorgi");
                 dynamic randomDog = JsonConvert.DeserializeObject<DogModel>(json);
-
                 return randomDog;
             }
         }
@@ -32,15 +31,22 @@ namespace Corgr_Client.Services
             {
                 var newDog = new DogModel
                 {
-                    Id = DogLiked.Id,
+                    Index = DogLiked.Index,
                     Face = DogLiked.Face,
                     Name = DogLiked.Name,
                     Likes = DogLiked.Likes,
                     Liked = Appreciation
                 };
 
-                context.DogModel.Add(newDog);
-                context.SaveChanges();
+                try
+                {
+                    context.DogModel.Add(newDog);
+                    context.SaveChanges();
+                }
+                catch
+                {
+
+                }
             }
         }
 
