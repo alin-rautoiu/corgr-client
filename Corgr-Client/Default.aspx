@@ -41,8 +41,8 @@
     <br />
      
         
-        <asp:Button ID="LikeButton" runat="server" Text="Like" BackColor="Green" />  
-        <asp:Button ID="DislikeButton" runat="server" Text="Dislike" BackColor="Red" />
+        <asp:Button  ID ="LikeButton" runat="server" Text="Like" BackColor="Green" OnClick="LikeButton_Click"/>  
+        <asp:Button  ID="DislikeButton" runat="server" Text="Dislike" BackColor="Red" OnClick="DislikeButton_Click"/>
      </div>
 
 </asp:Content>

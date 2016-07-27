@@ -8,6 +8,7 @@ using System.Web;
 
 namespace Corgr_Client.Models
 {
+    [Serializable]
     [Table("Dog", Schema = "Dg")]
     public class DogModel
     {   [Key]

@@ -20,5 +20,34 @@ namespace Corgr_Client.Services
                 return randomDog;
             }
         }
+
+        public void AddLikedDog(DogModel DogLiked)
+        {
+            NewMethod(DogLiked, true);
+        }
+
+        private static void NewMethod(DogModel DogLiked, bool Appreciation)
+        {
+            using (var context = new DogContext.DogContext())
+            {
+                var newDog = new DogModel
+                {
+                    Id = DogLiked.Id,
+                    Face = DogLiked.Face,
+                    Name = DogLiked.Name,
+                    Likes = DogLiked.Likes,
+                    Liked = Appreciation
+                };
+
+                context.DogModel.Add(newDog);
+                context.SaveChanges();
+            }
+        }
+
+        public void AddUnlikedDog(DogModel DogUnliked)
+        {
+            NewMethod(DogUnliked, false);
+        }
+
     }
 }

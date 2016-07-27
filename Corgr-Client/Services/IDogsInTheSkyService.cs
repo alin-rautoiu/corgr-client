@@ -10,5 +10,7 @@ namespace Corgr_Client.Services
     public interface IDogsInTheSkyService
     {
         DogModel GetRandomDog();
+        void AddLikedDog(DogModel DogLiked);
+        void AddUnlikedDog(DogModel DogUnliked);
     }
 }

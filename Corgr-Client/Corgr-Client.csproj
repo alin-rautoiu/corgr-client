@@ -276,7 +276,6 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\DogModel.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\DogsInTheSkyService.cs" />
     <Compile Include="Services\IDogsInTheSkyService.cs" />
