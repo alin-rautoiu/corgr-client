@@ -1,4 +1,6 @@
-﻿using Corgr_Client.Models;
+﻿using Autofac;
+using Autofac.Integration.Web;
+using Corgr_Client.Models;
 using Corgr_Client.Services;
 using System;
 using System.Collections.Generic;
@@ -12,6 +14,13 @@ namespace Corgr_Client
     public partial class _Default : Page
     {
         public IDogsInTheSkyService dogsIntheSkyService { get; set; }
+
+        protected override void OnPreInit(EventArgs e)
+        {
+            var cpa = (IContainerProviderAccessor)HttpContext.Current.ApplicationInstance;
+            var cp = cpa.ContainerProvider;
+            cp.RequestLifetime.InjectProperties(this);
+        }
 
         protected void Page_Load(object sender, EventArgs e)
         {
