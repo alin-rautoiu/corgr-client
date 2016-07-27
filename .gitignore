@@ -1,0 +1,6 @@
+*.dll
+Corgr-Client/bin/
+Corgr-Client/obj/
+packages/
+.vs/config/applicationhost.config
+.vs/Corgr-Client/v14/.suo
