@@ -43,14 +43,20 @@ namespace Corgr_Client
 
             using (var  context = new DogContext.DogContext())
             {
-                
+                NextButton.Style.Remove("display");
+
                 if (!context.DogModel.Any(x => x.Index == Dog1.Index))
                 {
+                    NextButton.Style.Add("display", "none");
                     AddToPage(Dog1);
 
                 }
                 else
                 {
+                    LikeButton.Style.Add("display", "none");
+                    DislikeButton.Style.Add("display", "none");
+
+
                     var appreciation = context.DogModel
                         .Single(x => x.Index == Dog1.Index).Liked.Value;
 
@@ -92,6 +98,10 @@ namespace Corgr_Client
             dogsIntheSkyService = new DogsInTheSkyService();
             dogsIntheSkyService.AddLikedDog(Dog1);
             UpdateDog();
+        }
+        protected void NextButton_Click(object sender, EventArgs e)
+        {
+            Page.Response.Redirect(Page.Request.Url.ToString(), true);
         }
     }
 }
