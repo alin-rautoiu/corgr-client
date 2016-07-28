@@ -5,27 +5,31 @@
     <h1 style="text-align:center">Dogs Collection</h1>
     <br />
     <br />
-    <style>
-        img.displayed{
+    <style>        
+        .displayed{
             display: block;
             margin-left: auto;
             margin-right: auto;
+            border: solid;
+            padding: 10px;
             width: 300px;
             height: 220px
         }
-       .center {
+        .center {
             margin: auto;
             width: 60%;
             padding: 10px;
         }
     </style>
-    <asp:Image runat="server" ID="DogImage" CssClass="displayed" />
+    <asp:Image runat="server" ID="DogImage" CssClass="displayed"/>
     <br />
     <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
         <asp:Label runat="server" ID="DogName"></asp:Label>
    
     <br />
     <div class="center" style="margin-left: auto; margin-right: auto; display: block; text-align: center;">    
+    
+        
     <ul>       
     <asp:Repeater runat="server" ID="RepeaterLikes">
         <ItemTemplate> 
@@ -46,3 +50,8 @@
      </div>
 
 </asp:Content>
+
+<asp:Content ID="BodyContent2" ContentPlaceHolderID="ContentMessage" runat="server">
+    <asp:Label runat="server" ID="NoDogs"></asp:Label>
+</asp:Content>
+

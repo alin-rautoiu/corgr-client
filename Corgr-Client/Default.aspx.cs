@@ -5,6 +5,7 @@ using Corgr_Client.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -40,25 +41,44 @@ namespace Corgr_Client
             Dog1 = dogsIntheSkyService.GetRandomDog();
             ViewState["Dog"] = Dog1;
 
-            using(var  context = new DogContext.DogContext())
+            using (var  context = new DogContext.DogContext())
             {
-                if(context.DogModel.Where(x => x.Index == Dog1.Index).Count() == 0)
+                
+                if (!context.DogModel.Any(x => x.Index == Dog1.Index))
                 {
-                    DogImage.ImageUrl = Dog1.Face;
-                    DogName.Text = Dog1.Name;
-                    RepeaterLikes.DataSource = Dog1.Likes;
-                    RepeaterLikes.DataBind();
-                    context.SaveChanges();
+                    AddToPage(Dog1);
+
                 }
                 else
                 {
-                    UpdateDog();
+                    var appreciation = context.DogModel
+                        .Single(x => x.Index == Dog1.Index).Liked.Value;
+
+                    DogImage.Style.Remove("border-color");
+
+                    if (appreciation)
+                    {
+                        DogImage.Style.Add(" border-color","palegreen");
+
+                    }
+                    else
+                    {
+                        DogImage.Style.Add(" border-color","red");
+                    }
+
+                    AddToPage(Dog1);
+
                 }
             }
-            
         }
 
-
+        public void AddToPage(DogModel Dog)
+        {
+            DogImage.ImageUrl = Dog1.Face;
+            DogName.Text = Dog1.Name;
+            RepeaterLikes.DataSource = Dog1.Likes;
+            RepeaterLikes.DataBind();
+        }
 
         protected void DislikeButton_Click(object sender, EventArgs e)
         {
