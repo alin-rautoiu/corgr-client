@@ -5,15 +5,11 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
          <div class="container">
              <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                   <span class="icon-bar"></span>
-                </button>
+                <asp:Button CssClass="navbar-toggle" PostBackUrl="~/ListDogsPage.aspx" runat="server" Text="List Dogs" BorderColor="Purple" BackColor="Silver">
+                  
+                </asp:Button>
              </div>
-             <div class="navbar-collapse collapse">
-                  <ul class="nav navbar-nav">
-                     <li><a runat="server" href="~/listDogs">List Dogs</a></li>
-                  </ul>
-             </div>
+             
             </div>
     </div>
 
@@ -34,6 +30,12 @@
             margin: auto;
             width: 60%;
             padding: 10px;
+        }
+        .navbar-toggle{
+            display: block;
+            margin: auto;
+            padding-top: 6px;
+
         }
     </style>
     <asp:Image runat="server" ID="DogImage" CssClass="displayed"/>
@@ -62,7 +64,7 @@
         
         <asp:Button  ID ="LikeButton" runat="server" Text="Like" BackColor="Green" OnClick="LikeButton_Click"/>  
         <asp:Button  ID="DislikeButton" runat="server" Text="Dislike" BackColor="Red" OnClick="DislikeButton_Click"/>
-        <asp:Button  ID ="NextButton" runat="server" Text="Next" BackColor="Blue" OnClick="NextButton_Click"/> 
+        <asp:Button  ID ="NextButton" runat="server" Text="Next" BackColor="Silver" OnClick="NextButton_Click"/> 
      </div>
 
 </asp:Content>

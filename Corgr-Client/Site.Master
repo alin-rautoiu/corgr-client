@@ -46,6 +46,9 @@
             <asp:ContentPlaceHolder ID="ContentMessage" runat="server">
                                
             </asp:ContentPlaceHolder>
+             <asp:ContentPlaceHolder ID="SecondPageContent" runat="server">
+                               
+            </asp:ContentPlaceHolder>
             
         
          
