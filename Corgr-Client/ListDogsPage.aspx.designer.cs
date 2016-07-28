@@ -11,5 +11,41 @@ namespace Corgr_Client {
     
     
     public partial class ListDogsPage {
+        
+        /// <summary>
+        /// LikedDogs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel LikedDogs;
+        
+        /// <summary>
+        /// RepeaterLikedDogs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterLikedDogs;
+        
+        /// <summary>
+        /// DislikedDogs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel DislikedDogs;
+        
+        /// <summary>
+        /// RepeaterUnlikedDogs control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater RepeaterUnlikedDogs;
     }
 }

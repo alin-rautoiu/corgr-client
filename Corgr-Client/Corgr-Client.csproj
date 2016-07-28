@@ -206,6 +206,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="ListDogsPage.aspx" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -269,6 +270,13 @@
     <Compile Include="DogContext\DogContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="ListDogsPage.aspx.cs">
+      <DependentUpon>ListDogsPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListDogsPage.aspx.designer.cs">
+      <DependentUpon>ListDogsPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201607261356592_tabelacaine.cs" />
     <Compile Include="Migrations\201607261356592_tabelacaine.Designer.cs">
