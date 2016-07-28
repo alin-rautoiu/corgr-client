@@ -2,6 +2,21 @@
 
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+         <div class="container">
+             <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                   <span class="icon-bar"></span>
+                </button>
+             </div>
+             <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                     <li><a runat="server" href="~/listDogs">List Dogs</a></li>
+                  </ul>
+             </div>
+            </div>
+    </div>
+
     <h1 style="text-align:center">Dogs Collection</h1>
     <br />
     <br />
