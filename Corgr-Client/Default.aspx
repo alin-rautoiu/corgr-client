@@ -22,7 +22,7 @@
     <asp:Image runat="server" ID="DogImage" CssClass="displayed" />
     <br />
     <div style="margin-left: auto; margin-right: auto; display: block; text-align: center;">
-        <asp:Label runat="server" ID="DogName" Text="Aria Labradino"></asp:Label>
+        <asp:Label runat="server" ID="DogName"></asp:Label>
    
     <br />
     <div class="center" style="margin-left: auto; margin-right: auto; display: block; text-align: center;">    

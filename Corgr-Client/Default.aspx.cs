@@ -40,11 +40,25 @@ namespace Corgr_Client
             Dog1 = dogsIntheSkyService.GetRandomDog();
             ViewState["Dog"] = Dog1;
 
-            DogImage.ImageUrl = Dog1.Face;
-            DogName.Text = Dog1.Name;
-            RepeaterLikes.DataSource = Dog1.Likes;
-            RepeaterLikes.DataBind();
+            using(var  context = new DogContext.DogContext())
+            {
+                if(context.DogModel.Where(x => x.Index == Dog1.Index).Count() == 0)
+                {
+                    DogImage.ImageUrl = Dog1.Face;
+                    DogName.Text = Dog1.Name;
+                    RepeaterLikes.DataSource = Dog1.Likes;
+                    RepeaterLikes.DataBind();
+                    context.SaveChanges();
+                }
+                else
+                {
+                    UpdateDog();
+                }
+            }
+            
         }
+
+
 
         protected void DislikeButton_Click(object sender, EventArgs e)
         {
