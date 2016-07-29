@@ -12,5 +12,7 @@ namespace Corgr_Client.Services
         DogModel GetRandomDog();
         void AddLikedDog(DogModel DogLiked);
         void AddUnlikedDog(DogModel DogUnliked);
+        List<string> Likes(int idDog);
+        IEnumerable<string> GetDogLikesById(int IdDog);       
     }
 }

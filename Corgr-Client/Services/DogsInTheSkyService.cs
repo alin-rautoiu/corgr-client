@@ -20,6 +20,33 @@ namespace Corgr_Client.Services
             }
         }
 
+        public List<string> Likes(int idDog)
+        {
+            List<string> likesList = new List<string>();
+            using (var client = new WebClient())
+            {
+                string json = client.DownloadString($"https://corgr.herokuapp.com/getCorgi/{idDog}");
+
+                return likesList;
+            }
+        }
+
+        public DogModel GetDogById(int IdDog)
+        {
+            using (var client = new WebClient())
+            {
+                string json = client.DownloadString($"https://corgr.herokuapp.com/getCorgi/{IdDog}");
+                var DogById = JsonConvert.DeserializeObject<DogModel>(json);
+
+                return DogById;
+            }
+        }
+
+        public IEnumerable<string> GetDogLikesById(int IdDog)
+        {
+            return GetDogById(IdDog).Likes;
+        }
+
         public void AddLikedDog(DogModel DogLiked)
         {
             NewMethod(DogLiked, true);
@@ -55,5 +82,6 @@ namespace Corgr_Client.Services
             NewMethod(DogUnliked, false);
         }
 
+       
     }
 }

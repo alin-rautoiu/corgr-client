@@ -2,9 +2,11 @@
 using Autofac.Integration.Web;
 using Corgr_Client.Models;
 using Corgr_Client.Services;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Web;
 using System.Web.UI;
@@ -35,7 +37,23 @@ namespace Corgr_Client
             }                   
         }
 
-        
+        public DogModel GetDogById(int IdDog)
+        {
+            using (var client = new WebClient())
+            {
+                string json = client.DownloadString($"https://corgr.herokuapp.com/getCorgi/{IdDog}");
+                var DogById = JsonConvert.DeserializeObject<DogModel>(json);
+
+                return DogById;
+            }
+        }
+
+        public IEnumerable<string> GetDogLikesById(int IdDog)
+        {
+            return GetDogById(IdDog).Likes;
+        }
+
+
         private void UpdateDog()
         {
             Dog1 = dogsIntheSkyService.GetRandomDog();
